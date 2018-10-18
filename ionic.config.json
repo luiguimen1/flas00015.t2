@@ -1,0 +1,7 @@
+{
+  "name": "proaseo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,14 +1,62 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Aseo
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <div class="titulo">
+        Sistema de información de aseo
+    </div>
+    <ion-card>
+        <ion-card-header>
+            Funciones
+            <hr>
+        </ion-card-header>
+        <ion-grid id="tabla1">
+            <ion-row>
+                <ion-col col-4>
+                    <img src="../../assets/portada/LuisAlvarez.jpg" />
+                </ion-col>
+                <ion-col col-4>
+                    <img (click)="irMision()" src="../../assets/portada/bandera.svg" />
+                </ion-col>
+                <ion-col col-4>
+                    <img src="../../assets/portada/vision.svg" />
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-4>Perfil</ion-col>
+                <ion-col (click)="irMision()" col-4>Misión</ion-col>
+                <ion-col col-4>Visión</ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    
+    <ion-item class="sinfondo">
+        <button ion-button full large round color="danger" icon-only (click)="irMatematicas()">
+            <ion-icon name="key"></ion-icon>
+            Matemáticas
+        </button>
+    </ion-item>
+
+    <ion-item class="sinfondo">
+        <ion-avatar item-start>
+            <img src="../../assets/portada/gestion-de-carpetas.svg" />
+        </ion-avatar>
+        <button ion-button full color="mio">
+            Gestión de categorias
+        </button>
+    </ion-item>
+
+    <ion-item class="sinfondo">
+        <button ion-button full color="secondary" icon-only>
+            <ion-icon name="construct"></ion-icon>
+            Gestión de productos
+        </button>
+    </ion-item>
+
+
 </ion-content>

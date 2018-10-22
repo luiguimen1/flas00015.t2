@@ -14,3 +14,57 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-content{
+    background: rgba(29,217,242,1);
+    background: -moz-linear-gradient(top, rgba(29,217,242,1) 0%, rgba(85,12,133,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(29,217,242,1)), color-stop(100%, rgba(85,12,133,1)));
+    background: -webkit-linear-gradient(top, rgba(29,217,242,1) 0%, rgba(85,12,133,1) 100%);
+    background: -o-linear-gradient(top, rgba(29,217,242,1) 0%, rgba(85,12,133,1) 100%);
+    background: -ms-linear-gradient(top, rgba(29,217,242,1) 0%, rgba(85,12,133,1) 100%);
+    background: linear-gradient(to bottom, rgba(29,217,242,1) 0%, rgba(85,12,133,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1dd9f2', endColorstr='#550c85', GradientType=0 );
+}
+
+@font-face {
+    font-family: "Baloo-Regular";
+    src:url(../assets/fonts/Baloo-Regular.ttf);
+}
+
+@font-face {
+    font-family: "MarkaziText-Regular";
+    src:url(../assets/fonts/MarkaziText-Regular.ttf);
+}
+
+.titulo{
+    font-family: "Baloo-Regular";
+    text-align: center;
+    font-size: 30px;
+    background: none;
+}
+
+.sinfondo{
+    background: transparent !important;
+}
+
+.error{
+    background: rgba(239,197,202,1);
+    background: -moz-linear-gradient(top, rgba(239,197,202,1) 0%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(239,197,202,1)), color-stop(51%, rgba(186,39,55,1)), color-stop(100%, rgba(241,142,153,1)));
+    background: -webkit-linear-gradient(top, rgba(239,197,202,1) 0%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+    background: -o-linear-gradient(top, rgba(239,197,202,1) 0%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+    background: -ms-linear-gradient(top, rgba(239,197,202,1) 0%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+    background: linear-gradient(to bottom, rgba(239,197,202,1) 0%, rgba(186,39,55,1) 51%, rgba(241,142,153,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efc5ca', endColorstr='#f18e99', GradientType=0 );
+}
+
+.error p{
+    color:#FFF !important;
+    font-size: 14px !important;
+    font-weight: lighter !important;
+    font-family: "Baloo-Regular" !important;
+}
+
+.dere{
+    text-align: right !important;
+}

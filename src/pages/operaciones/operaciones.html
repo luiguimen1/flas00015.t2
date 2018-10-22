@@ -16,10 +16,11 @@
         <ion-card-header>
             Operaciones matemáticas
         </ion-card-header>
+        <div *ngIf="resultado">
+            <p>{{resultado}}</p>         
+            </div>
         <ion-list>
-            <ion-item *ngIf="resultado">
-                {{resultado}}         
-            </ion-item>
+            
             <ion-item>
                 <ion-label floating>Ingrese un número</ion-label>
                 <ion-input type="text" [(ngModel)]="numero1" placeholder="Ingrese un número"></ion-input>                
@@ -36,6 +37,27 @@
                 <button ion-button (click)="suma()" >Suma</button>
             </ion-item>
         </ion-list>
+        <button ion-button (click)="tabla()">tabla</button>
+        <ion-grid>
+            <ion-row>
+                <ion-col>numero</ion-col>
+                <ion-col>*</ion-col>
+                <ion-col>Item</ion-col>
+                <ion-col>=</ion-col>
+                <ion-col>Resul</ion-col>
+            </ion-row>
+            
+             <ion-row *ngFor="let piso of edificio">
+                <ion-col>{{piso.numero}}</ion-col>
+                <ion-col>*</ion-col>
+                <ion-col>{{piso.por}}</ion-col>
+                <ion-col>=</ion-col>
+                <ion-col class="concolor">{{piso.resul}}</ion-col>
+            </ion-row>
+            
+            
+        </ion-grid>
+        
     </ion-card>
 
 

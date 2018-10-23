@@ -10,6 +10,8 @@ import {OperacionesPage} from '../pages/operaciones/operaciones';
 import {MisionPage} from '../pages/mision/mision';
 import {HojavidaPage} from '../pages/hojavida/hojavida';
 import {VisionPage} from '../pages/vision/vision';
+import {HttpClientModule } from '@angular/common/http';
+import { ConectarProvider } from '../providers/conectar/conectar';
 @NgModule({
     declarations: [
         MyApp,
@@ -21,7 +23,8 @@ import {VisionPage} from '../pages/vision/vision';
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        HttpClientModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -35,7 +38,8 @@ import {VisionPage} from '../pages/vision/vision';
     providers: [
         StatusBar,
         SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        ConectarProvider
     ]
 })
 export class AppModule {}

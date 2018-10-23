@@ -6,13 +6,39 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>vision</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Ver Usuarios</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            <h1 class="titulo">Traer listado</h1>
+        </ion-card-header>
+        <ion-item>
+            <ion-label stacked>Ingrese el numero de usuarios</ion-label>
+            <ion-input type="text" [(ngModel)]="numero" placeHolder="Numero de usuarios"></ion-input>
+        </ion-item>
+        <ion-item class="error" *ngIf="error">
+            <p>Debe ser un numero</p>
+        </ion-item>
+        <ion-item>
+            <button ion-button color="primary" round full (click)="traerLista()" >Traer</button>
+        </ion-item>
+    </ion-card>
+
+
+    <ion-list *ngIf="edificio">
+        <ion-item *ngFor="let piso of edificio">
+            <ion-avatar item-start>
+                <img src="img/avatar-cher.png">
+            </ion-avatar>
+            <h2 class="mayus">{{piso.name.title}} {{piso.name.first}} {{piso.name.last}}</h2>
+            <p>Ugh. As if.</p>
+        </ion-item>
+    </ion-list>
 
 </ion-content>

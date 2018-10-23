@@ -23,20 +23,49 @@ export class OperacionesPage {
         this.error1 = false;
         this.error2 = false;
     }
-    suma() {
+
+
+    validar() {
         this.resultado = null;
+        let estado = false;
         if (isNaN(parseFloat(this.numero1))) {
             this.error1 = true;
             setTimeout(() => {
                 this.error1 = false;
-            }, 2000);
-        } else if (isNaN(parseFloat(this.numero2))) {
+            }, 3000);
+            estado = true;
+        }
+
+        if (isNaN(parseFloat(this.numero2))) {
             this.error2 = true;
             setTimeout(() => {
                 this.error2 = false;
-            }, 2000);
-        } else {
-            this.resultado = parseFloat(this.numero1) + parseFloat(this.numero2);
+            }, 3000);
+            estado = true;
+        }
+        return estado;
+    }
+    suma() {
+        if (!this.validar()) {
+            this.resultado = "Suma es =" + (parseFloat(this.numero1) + parseFloat(this.numero2));
+        }
+    }
+
+    resta() {
+        if (!this.validar()) {
+            this.resultado = "Resta es ="+(parseFloat(this.numero1) - parseFloat(this.numero2));
+        }
+    }
+
+    multi() {
+        if (!this.validar()) {
+            this.resultado ="Multiplicación es ="+(parseFloat(this.numero1) * parseFloat(this.numero2));
+        }
+    }
+
+    divi() {
+        if (!this.validar()) {
+            this.resultado = "La división es="+ (parseFloat(this.numero1) / parseFloat(this.numero2));
         }
     }
 
@@ -49,18 +78,15 @@ export class OperacionesPage {
 
     tabla() {
         this.edificio = Array();
-        let cadena="listado de resultados= <br>";
+        let cadena = "listado de resultados= <br>";
         for (let i = 0; i < this.numero2; i++) {
-            let piso: any={
+            let piso: any = {
                 numero: this.numero1,
                 por: (i + 1),
                 resul: (this.numero1 * (i + 1))
             }
             this.edificio.push(piso);
-            cadena += piso.numero + " * "+ piso.por + " = "+ piso.resul+"<br>";
         }
-        
-        this.resultado = cadena;
     }
 
 }

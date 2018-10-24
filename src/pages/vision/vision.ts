@@ -3,7 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ConectarProvider} from '../../providers/conectar/conectar';
 import {LoadingController, AlertController} from 'ionic-angular';
 
-import {VerperfilPage} from '../verperfil/verperfil'; 
+import {VerperfilPage} from '../verperfil/verperfil';
 
 
 /**
@@ -39,7 +39,7 @@ export class VisionPage {
             setTimeout(() => {
                 this.error = false;
             }, 3000);
-            this.miAlerta("Error #20","debe Ingresar un numero");
+            this.miAlerta("Error #20", "debe Ingresar un numero");
         } else {
             const loader = this.loadingCtrl.create({
                 content: "Buscando la lista de usuarios..."
@@ -53,7 +53,7 @@ export class VisionPage {
                 this.edificio = data;
                 this.edificio = this.edificio.results;
             }, err => {
-            this.miAlerta("Error #21","No existe conexción con el servidor!");
+                this.miAlerta("Error #21", "No existe conexción con el servidor!");
                 console.log(err);
                 loader.dismiss();
             });
@@ -61,20 +61,20 @@ export class VisionPage {
 
     }
 
-    irPerfil(perfil){
-        this.navCtrl.push(VerperfilPage,{dato:perfil});
+    irPerfil(perfil) {
+        this.navCtrl.push(VerperfilPage, {dato: perfil});
     }
 
 
-    miAlerta(titulo,mensaje) {
+    miAlerta(titulo, mensaje) {
         const alert = this.alertCtrl.create({
-            title: '<h3 class="titulo">'+titulo+'</h3>',
-            subTitle: '<div class="error"><p>'+mensaje+'</p></div>',
+            title: '<h3 class="titulo">' + titulo + '</h3>',
+            subTitle: '<div class="error"><p>' + mensaje + '</p></div>',
             buttons: ['Cerrar']
         });
         alert.present();
     }
-    
-    
-    
+
+
+
 }

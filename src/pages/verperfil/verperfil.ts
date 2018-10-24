@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the VerperfilPage page.
@@ -10,17 +10,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-verperfil',
-  templateUrl: 'verperfil.html',
+    selector: 'page-verperfil',
+    templateUrl: 'verperfil.html',
 })
 export class VerperfilPage {
     perfil;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-      this.perfil = this.navParams.get('dato');
-  }
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
+        this.perfil = this.navParams.get('dato');
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad VerperfilPage');
-  }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad VerperfilPage');
+    }
 
 }

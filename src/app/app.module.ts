@@ -13,8 +13,8 @@ import {VisionPage} from '../pages/vision/vision';
 import {VerperfilPage} from '../pages/verperfil/verperfil';
 
 
-import {HttpClientModule } from '@angular/common/http';
-import { ConectarProvider } from '../providers/conectar/conectar';
+import {HttpClientModule} from '@angular/common/http';
+import {ConectarProvider} from '../providers/conectar/conectar';
 @NgModule({
     declarations: [
         MyApp,

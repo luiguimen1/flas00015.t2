@@ -3,6 +3,8 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ConectarProvider} from '../../providers/conectar/conectar';
 import {LoadingController, AlertController} from 'ionic-angular';
 
+import {VerperfilPage} from '../verperfil/verperfil'; 
+
 
 /**
  * Generated class for the VisionPage page.
@@ -59,7 +61,9 @@ export class VisionPage {
 
     }
 
-
+    irPerfil(perfil){
+        this.navCtrl.push(VerperfilPage,{dato:perfil});
+    }
 
 
     miAlerta(titulo,mensaje) {
@@ -70,4 +74,7 @@ export class VisionPage {
         });
         alert.present();
     }
+    
+    
+    
 }

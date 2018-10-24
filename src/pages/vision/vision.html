@@ -34,10 +34,13 @@
     <ion-list *ngIf="edificio">
         <ion-item *ngFor="let piso of edificio">
             <ion-avatar item-start>
-                <img src="img/avatar-cher.png">
+                <img src="{{piso.picture.thumbnail}}">
             </ion-avatar>
             <h2 class="mayus">{{piso.name.title}} {{piso.name.first}} {{piso.name.last}}</h2>
-            <p>Ugh. As if.</p>
+            <p>{{piso.location.city}} of {{piso.location.state}}</p>
+            <ion-avatar item-end>
+                <img (click)="irPerfil(piso)" src="../../assets/vision/vision.svg">
+            </ion-avatar>
         </ion-item>
     </ion-list>
 

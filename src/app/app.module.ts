@@ -10,6 +10,9 @@ import {OperacionesPage} from '../pages/operaciones/operaciones';
 import {MisionPage} from '../pages/mision/mision';
 import {HojavidaPage} from '../pages/hojavida/hojavida';
 import {VisionPage} from '../pages/vision/vision';
+import {VerperfilPage} from '../pages/verperfil/verperfil';
+
+
 import {HttpClientModule } from '@angular/common/http';
 import { ConectarProvider } from '../providers/conectar/conectar';
 @NgModule({
@@ -19,7 +22,8 @@ import { ConectarProvider } from '../providers/conectar/conectar';
         OperacionesPage,
         MisionPage,
         HojavidaPage,
-        VisionPage
+        VisionPage,
+        VerperfilPage
     ],
     imports: [
         BrowserModule,
@@ -33,7 +37,8 @@ import { ConectarProvider } from '../providers/conectar/conectar';
         OperacionesPage,
         MisionPage,
         HojavidaPage,
-        VisionPage
+        VisionPage,
+        VerperfilPage
     ],
     providers: [
         StatusBar,

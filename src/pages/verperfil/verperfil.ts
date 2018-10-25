@@ -15,6 +15,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 })
 export class VerperfilPage {
     perfil;
+    estado =true;
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.perfil = this.navParams.get('dato');
     }
@@ -22,5 +23,13 @@ export class VerperfilPage {
     ionViewDidLoad() {
         console.log('ionViewDidLoad VerperfilPage');
     }
-
+    retroceder(){
+        this.navCtrl.pop();
+    }
+    vermas(){
+        this.estado=false;
+    }
+    vermenos(){
+        this.estado=true;
+    }
 }

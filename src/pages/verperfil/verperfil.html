@@ -13,8 +13,51 @@
 
 
 <ion-content padding>
+    <button ion-button (click)="retroceder()">Menu</button>
     <ion-card>
+        <ion-card-header class="titulo">Perfil de {{perfil.name.last}}</ion-card-header>
         <img src="{{perfil.picture.large}}"/>
-        Nombre: {{perfil.name.first}}
     </ion-card>
+    <h1 class="titulo">Datos personales</h1>
+    <ion-grid *ngIf="estado">
+        <ion-row>
+            <ion-col col-3><b>Nombre</b></ion-col>
+            <ion-col col-9 class="alert-head">{{perfil.name.first}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>Apellido</ion-col>
+            <ion-col>{{perfil.name.Last}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-8>
+                <button ion-button color="light" fill (click)="vermas()">ver mas..</button>
+            </ion-col>
+            <ion-col col-4>
+            </ion-col>
+        </ion-row>    
+    </ion-grid>
+    <ion-grid *ngIf="!estado">
+        <ion-row>
+            <ion-col col-3><b>Ciudad</b></ion-col>
+            <ion-col col-9 class="alert-head">{{perfil.location.city}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>Estado</ion-col>
+            <ion-col>{{perfil.location.state}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>Correo</ion-col>
+            <ion-col>{{perfil.email}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>Telefono</ion-col>
+            <ion-col><a href="tel:{{perfil.phone}}">{{perfil.phone}}</a></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-4></ion-col>
+            <ion-col col-8>
+                <button ion-button color="dark" (click)="vermenos()">ver menos</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

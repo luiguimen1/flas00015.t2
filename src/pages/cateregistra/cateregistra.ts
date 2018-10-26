@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 /**
  * Generated class for the CateregistraPage page.
  *
@@ -10,16 +10,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-cateregistra',
-  templateUrl: 'cateregistra.html',
+    selector: 'page-cateregistra',
+    templateUrl: 'cateregistra.html',
 })
 export class CateregistraPage {
+    ForRegCate: FormGroup;
+    constructor(public navCtrl: NavController,
+        public navParams: NavParams,
+        public fb: FormBuilder) {
+        this.iniciarFormulario();
+    }
+    
+    iniciarFormulario(){
+        this.ForRegCate = this.fb.group({
+            nombre: ['', [Validators.required, Validators.pattern(/^[a-zA-Z_-ÀÁÂÃÄÅÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäèéêëìíîñòóôõöùúûüýÿ ]{3,20}$/)]],
+            detalles: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(200)]] 
+        });
+    }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CateregistraPage');
-  }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad CateregistraPage');
+    }
+    
+    RegistrarCate(){
+        console.table(this.ForRegCate.value);
+    }
 
 }

@@ -4,6 +4,7 @@ import {OperacionesPage} from '../operaciones/operaciones';
 import {MisionPage} from '../mision/mision';
 import {HojavidaPage} from '../hojavida/hojavida';
 import {VisionPage} from '../vision/vision';
+import {CategestionPage} from '../categestion/categestion';
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
@@ -28,6 +29,10 @@ export class HomePage {
     
     irHV(){
         this.navCtrl.push(HojavidaPage);
+    }
+    
+    irCategoria(){
+        this.navCtrl.push(CategestionPage);
     }
 
 }

@@ -6,13 +6,39 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>cateregistra</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Crear nueva</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <div class="titulo">Categoría</div>
+    <form [formGroup]="ForRegCate" (ngSubmit)="RegistrarCate()" novalidate>
+        <ion-item>
+            <ion-label stacked>Nombre</ion-label>
+            <ion-input formControlName="nombre" type="text" placeholder="Ingrese Nombre Categoría"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="ForRegCate.get('nombre').errors && ForRegCate.get('nombre').dirty">
+            <p color="danger" ion-text *ngIf="ForRegCate.get('nombre').hasError('required')">Debe Ingresar datos</p>
+            <p color="danger" ion-text *ngIf="ForRegCate.get('nombre').hasError('pattern')">Solo acepta de a - Z mini 3, maxi 20 Carcateres</p>
+            <p color="danger" ion-text *ngIf="ForRegCate.get('nombre').hasError('minlength')">Minimo 3 Carcateres</p>
+            <p color="danger" ion-text *ngIf="ForRegCate.get('nombre').hasError('maxlength')">Maximo 20 Carcateres</p>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label stacked>Detalles</ion-label>
+            <ion-textarea formControlName="detalles" row ="5" type="text" placeholder="Ingrese los detalles de la categoria"></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="ForRegCate.get('detalles').errors && ForRegCate.get('detalles').dirty">
+            <p color="danger" ion-text *ngIf="ForRegCate.get('detalles').hasError('required')">Debe Ingresar datos</p>
+            <p color="danger" ion-text *ngIf="ForRegCate.get('detalles').hasError('pattern')">mini 3, maxi 200 Carcateres</p>
+        </ion-item>
+        <ion-item>
+            <button ion-button color="primary" type="submit" [disabled]="!ForRegCate.valid">Registar</button>
+            <button ion-button color="danger" type="reset">Cancelar</button>
+        </ion-item>
+    </form>
 
 </ion-content>

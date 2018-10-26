@@ -5,14 +5,36 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>categestion</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <ion-title class="titulo">Optiones de categoria</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            Opciones de categoria
+        </ion-card-header>
+    </ion-card>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <img src="../../assets/categoria/add.svg" (click)="irAgregarCate()"/>
+            </ion-col>
+            <ion-col col-6>
+                <img src="../../assets/categoria/list.svg" (click)="irListaCate()"/>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col (click)="irAgregarCate()" col-6 class="titulo" style="font-size: 20px; color:#FF4000; font-weight: normal !important;">
+                Agregar categoría
+            </ion-col>
+            <ion-col (click)="irListaCate()" col-6 class="titulo" style="font-size: 20px; color:#FF4000; font-weight: normal !important;">
+                Listar categoría
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>

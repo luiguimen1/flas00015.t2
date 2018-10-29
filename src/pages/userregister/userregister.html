@@ -81,8 +81,8 @@
                 <ion-label stacked>Clave</ion-label>
                 <ion-input formControlName="clave" [type]="getClave()" placeholder="Ingrese su clave"></ion-input>
                 <button ion-button (click)="vercla()" item-end>
-                        <p *ngIf="getClave()=='password'"><ion-icon name="eye" large></ion-icon></p>
-                        <p *ngIf="getClave()=='text'"><ion-icon name="eye-off"></ion-icon></p>
+                        <ion-icon name="eye" large *ngIf="getClave()=='password'"></ion-icon>
+                    <ion-icon name="eye-off" *ngIf="getClave()=='text'"></ion-icon>
                 </button>  
             </ion-item>
             <ion-item *ngIf="ForRegUser.get('clave').errors && ForRegUser.get('clave').dirty">
@@ -95,10 +95,11 @@
                 <ion-label stacked>Confirme clave</ion-label>
                 <ion-input formControlName="clave1" [type]="getClave1()" placeholder="confirme clave"></ion-input>
                 <button ion-button (click)="vercla1()" item-end>
-                    <ion-icon name="eye" large></ion-icon>
+                        <ion-icon name="eye" large *ngIf="getClave1()=='password'"></ion-icon>
+                    <ion-icon name="eye-off" *ngIf="getClave1()=='text'"></ion-icon>
                 </button>    
-                    
-                
+
+
             </ion-item>
             <ion-item *ngIf="ForRegUser.get('clave1').errors && ForRegUser.get('clave1').dirty">
                 <p color="danger" ion-text *ngIf="ForRegUser.get('clave1').hasError('required')">Debe Ingresar datos</p>

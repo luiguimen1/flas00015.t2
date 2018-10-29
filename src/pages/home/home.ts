@@ -5,11 +5,23 @@ import {MisionPage} from '../mision/mision';
 import {HojavidaPage} from '../hojavida/hojavida';
 import {VisionPage} from '../vision/vision';
 import {CategestionPage} from '../categestion/categestion';
+import {UserregisterPage} from '../userregister/userregister';
+import {UserloginPage} from '../userlogin/userlogin';
+
+
+
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
 })
 export class HomePage {
+    
+    irlogin(){
+        this.navCtrl.push(UserloginPage);
+    }
+    irRegisterUser(){
+        this.navCtrl.push(UserregisterPage);
+    }
 
     constructor(public navCtrl: NavController) {
 

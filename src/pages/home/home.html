@@ -2,11 +2,21 @@
     <ion-navbar>
         <ion-title>
             Aseo
+            <ion-avatar item-end style="width: 50px; float: right;">
+                <img (click)='irlogin()' src="../../assets/home/InicioSession.svg">
+            </ion-avatar>
         </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-item>
+        <ion-avatar item-end>
+            <img (click)="irRegisterUser()" style="border-radius: 0px !important;" src="../../assets/home/Registro.svg">
+        </ion-avatar>Crear Cuenta
+    </ion-item>
+
+
     <div class="titulo">
         Sistema de información de aseo
     </div>
@@ -34,10 +44,10 @@
             </ion-row>
         </ion-grid>
     </ion-card>
-    
+
     <ion-item class="sinfondo">
         <button ion-button full large round color="danger" icon-only (click)="irMatematicas()">
-            <ion-icon name="key"></ion-icon>
+                <ion-icon name="key"></ion-icon>
             Matemáticas
         </button>
     </ion-item>

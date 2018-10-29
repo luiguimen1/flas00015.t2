@@ -6,13 +6,109 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>userregister</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Crear una cuenta</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-item>
+        <ion-avatar item-end>
+            <img style="border-radius: 0px !important;" src="../../assets/home/Registro.svg">
+        </ion-avatar>
+        <h2 class="titulo">Crear Cuenta</h2>
+    </ion-item>
 
+    <ion-card>
+        <form [formGroup]="ForRegUser" (ngSubmit)="RegistrarUsuario()" novalidate>
+            <ion-item>
+                <ion-label stacked>Nombre</ion-label>
+                <ion-input formControlName="nombre" type="text" placeholder="Ingrese su Nombre"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="ForRegUser.get('nombre').errors && ForRegUser.get('nombre').dirty">
+                <p color="danger" ion-text *ngIf="ForRegUser.get('nombre').hasError('required')">Debe Ingresar datos</p>
+                <p color="danger" ion-text *ngIf="ForRegUser.get('nombre').hasError('pattern')">Solo acepta de a - Z mini 3, maxi 20 Carcateres</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Apellido</ion-label>
+                <ion-input formControlName="apellido" type="text" placeholder="Ingrese su apellido"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="ForRegUser.get('apellido').errors && ForRegUser.get('apellido').dirty">
+                <p color="danger" ion-text *ngIf="ForRegUser.get('apellido').hasError('required')">Debe Ingresar datos</p>
+                <p color="danger" ion-text *ngIf="ForRegUser.get('apellido').hasError('pattern')">Solo acepta de a - Z mini 3, maxi 20 Carcateres</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Cédula</ion-label>
+                <ion-input formControlName="cedula" type="text" placeholder="Ingrese su cedula"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="ForRegUser.get('cedula').errors && ForRegUser.get('cedula').dirty">
+                <p color="danger" ion-text *ngIf="ForRegUser.get('cedula').hasError('required')">Debe Ingresar datos</p>
+                <p color="danger" ion-text *ngIf="ForRegUser.get('cedula').hasError('pattern')">Solo numeros mini 3, maxi 20 Carcateres</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Correo</ion-label>
+                <ion-input formControlName="correo" type="text" placeholder="Ingrese su correo"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="ForRegUser.get('correo').errors && ForRegUser.get('correo').dirty">
+                <p color="danger" ion-text *ngIf="ForRegUser.get('correo').hasError('required')">Debe Ingresar datos</p>
+                <p color="danger" ion-text *ngIf="ForRegUser.get('correo').hasError('email')">lo ingresado no es un correo</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Dirección</ion-label>
+                <ion-input formControlName="dir" type="text" placeholder="Ingrese su direccion de vivienda"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="ForRegUser.get('dir').errors && ForRegUser.get('dir').dirty">
+                <p color="danger" ion-text *ngIf="ForRegUser.get('apellido').hasError('required')">Debe Ingresar datos</p>
+                <p color="danger" ion-text *ngIf="ForRegUser.get('apellido').hasError('pattern')">Solo acepta de a - Z# mini 8, maxi 20 Carcateres</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Telefono</ion-label>
+                <ion-input formControlName="tele" type="text" placeholder="Ingrese su telefono"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="ForRegUser.get('tele').errors && ForRegUser.get('tele').dirty">
+                <p color="danger" ion-text *ngIf="ForRegUser.get('tele').hasError('required')">Debe Ingresar datos</p>
+                <p color="danger" ion-text *ngIf="ForRegUser.get('tele').hasError('pattern')">Solo numeros mini 8, maxi 10 Carcateres</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Clave</ion-label>
+                <ion-input formControlName="clave" [type]="getClave()" placeholder="Ingrese su clave"></ion-input>
+                <button ion-button (click)="vercla()" item-end>
+                        <p *ngIf="getClave()=='password'"><ion-icon name="eye" large></ion-icon></p>
+                        <p *ngIf="getClave()=='text'"><ion-icon name="eye-off"></ion-icon></p>
+                </button>  
+            </ion-item>
+            <ion-item *ngIf="ForRegUser.get('clave').errors && ForRegUser.get('clave').dirty">
+                <p color="danger" ion-text *ngIf="ForRegUser.get('clave').hasError('required')">Debe Ingresar datos</p>
+                <p color="danger" ion-text *ngIf="ForRegUser.get('clave').hasError('pattern')">Solo numeros mini 8, maxi 10 Carcateres</p>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label stacked>Confirme clave</ion-label>
+                <ion-input formControlName="clave1" [type]="getClave1()" placeholder="confirme clave"></ion-input>
+                <button ion-button (click)="vercla1()" item-end>
+                    <ion-icon name="eye" large></ion-icon>
+                </button>    
+                    
+                
+            </ion-item>
+            <ion-item *ngIf="ForRegUser.get('clave1').errors && ForRegUser.get('clave1').dirty">
+                <p color="danger" ion-text *ngIf="ForRegUser.get('clave1').hasError('required')">Debe Ingresar datos</p>
+                <p color="danger" ion-text *ngIf="ForRegUser.get('clave1').hasError('pattern')">Solo numeros mini 8, maxi 10 Carcateres</p>
+            </ion-item>
+
+            <ion-item>
+                <button ion-button color="primary" type="submit" [disabled]="!ForRegUser.valid">Crear cuenta</button>
+                <button ion-button color="danger" type="reset">Cancelar</button>
+            </ion-item>
+        </form>
+    </ion-card>
 </ion-content>

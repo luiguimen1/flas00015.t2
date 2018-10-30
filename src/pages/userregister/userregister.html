@@ -105,6 +105,9 @@
                 <p color="danger" ion-text *ngIf="ForRegUser.get('clave1').hasError('required')">Debe Ingresar datos</p>
                 <p color="danger" ion-text *ngIf="ForRegUser.get('clave1').hasError('pattern')">Solo numeros mini 8, maxi 10 Carcateres</p>
             </ion-item>
+            <ion-item *ngIf="laclave">
+                <p>La clave no es igual, verificar!!!</p>
+            </ion-item>
 
             <ion-item>
                 <button ion-button color="primary" type="submit" [disabled]="!ForRegUser.valid">Crear cuenta</button>

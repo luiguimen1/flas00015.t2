@@ -7,6 +7,7 @@ import {VisionPage} from '../vision/vision';
 import {CategestionPage} from '../categestion/categestion';
 import {UserregisterPage} from '../userregister/userregister';
 import {UserloginPage} from '../userlogin/userlogin';
+import {ProdgestionPage} from '../prodgestion/prodgestion';
 
 
 
@@ -45,6 +46,10 @@ export class HomePage {
     
     irCategoria(){
         this.navCtrl.push(CategestionPage);
+    }
+    
+    irGestionPro(){
+        this.navCtrl.push(ProdgestionPage);
     }
 
 }

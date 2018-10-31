@@ -7,12 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>prodgestion</ion-title>
+    <ion-title>Gestion de productos</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+<ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <img src="../../assets/producto/crear.svg" (click)="irAgregarProdu()"/>
+            </ion-col>
+            <ion-col col-6>
+                <img src="../../assets/producto/listado.svg" (click)="irListaProdu()"/>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col (click)="irAgregarProdu()" col-6 class="titulo" style="font-size: 20px; color:#FF4000; font-weight: normal !important;">
+                Agregar Producto
+            </ion-col>
+            <ion-col (click)="irListaProdu()" col-6 class="titulo" style="font-size: 20px; color:#FF4000; font-weight: normal !important;">
+                Listar Productos
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

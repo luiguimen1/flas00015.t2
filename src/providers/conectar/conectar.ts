@@ -9,7 +9,7 @@ import {Injectable} from '@angular/core';
 */
 @Injectable()
 export class ConectarProvider {
-    url = "http://192.168.0.159/Flas015web/"
+    url = "http://192.168.0.49/Flas015web/"
     options = {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -32,12 +32,19 @@ export class ConectarProvider {
      */
     CrearUsuario(Usuario: any) {
         Usuario.token = "QWER@QWE#$%@#Q@#EW..?";
-        return this.http.post(this.url+"controller/user/crear.php", JSON.stringify(Usuario), this.options);
+        return this.http.post(this.url + "controller/user/crear.php", JSON.stringify(Usuario), this.options);
     }
-    
-    
-    crearCategoria(cate){
+
+
+    crearCategoria(cate) {
         cate.token = "QWER@QWE#$%@#Q@#EW..?";
-        return this.http.post(this.url+"controller/cate/crear.php", JSON.stringify(cate), this.options);
+        return this.http.post(this.url + "controller/cate/crear.php", JSON.stringify(cate), this.options);
+    }
+
+    listaCategoria() {
+        let cate: any = {
+            token: "QWER@QWE#$%@#Q@#EW..?"
+        }
+        return this.http.post(this.url + "controller/cate/lista.php", JSON.stringify(cate), this.options);
     }
 }

@@ -6,13 +6,24 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>catelista</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Lista de categorias</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+    <h2 class="titulo">Categorias</h2>
+    <ion-list>
+        <ion-item *ngFor="let cate of edificio">
+            <ion-thumbnail item-start>
+                <img *ngIf="cate.foto == 'sinfotocate.svg'" src="../../assets/cate/sinfotocate.svg"/>
+                <img *ngIf="cate.foto != 'sinfotocate.svg'" src="http://192.168.0.49/Flas015web/img/cate/{{cate.foto}}"/>
+            </ion-thumbnail>
+            <h2>{{cate.nom}}</h2>
+            <p>{{cate.det}}</p>
+            <button ion-button clear item-end>Ver</button>
+        </ion-item>
+    </ion-list>
 </ion-content>

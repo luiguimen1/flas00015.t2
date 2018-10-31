@@ -72,7 +72,7 @@ export class UserregisterPage {
                 loader.dismiss();
 
                 let toast = this.toastCtrl.create({
-                    message: 'User was added successfully',
+                    message: 'No hay conexción con el servidor',
                     position: 'botton',
                     showCloseButton: true,
                     closeButtonText: "Cerrar"

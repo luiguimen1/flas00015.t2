@@ -47,4 +47,19 @@ export class ConectarProvider {
         }
         return this.http.post(this.url + "controller/cate/lista.php", JSON.stringify(cate), this.options);
     }
+
+    listaCategoriaXid(cate) {
+        let estaCate = {
+            token: "QWER@QWE#$%@#Q@#EW..?",
+            id: cate.cod
+        };
+        return this.http.post(this.url + "controller/cate/listaxid.php", JSON.stringify(estaCate), this.options);
+    }
+
+    actuCategoria(cate:any) {
+        cate.token = "QWER@QWE#$%@#Q@#EW..?";
+        return this.http.post(this.url + "controller/cate/actu.php", JSON.stringify(cate), this.options);
+    }
 }
+
+

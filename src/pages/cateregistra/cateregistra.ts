@@ -40,8 +40,6 @@ export class CateregistraPage {
     }
 
     RegistrarCate() {
-
-
         const loader = this.loadingCtrl.create({
             content: "Procesando su Solicitud de creación de la categoría"
         });

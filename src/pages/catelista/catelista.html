@@ -14,6 +14,9 @@
 
 
 <ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
     <h2 class="titulo">Categorias</h2>
     <ion-list>
         <ion-item *ngFor="let cate of edificio">
@@ -23,7 +26,7 @@
             </ion-thumbnail>
             <h2>{{cate.nom}}</h2>
             <p>{{cate.det}}</p>
-            <button ion-button clear item-end>Ver</button>
+            <button ion-button clear item-end  (click)="vercate(cate)">Ver</button>
         </ion-item>
     </ion-list>
 </ion-content>

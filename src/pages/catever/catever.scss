@@ -1,3 +1,11 @@
 page-catever {
-
+    #cam{
+        width: 70px;
+        height: 70px;
+        background-image: url(../../assets/cam.svg);
+        z-index: 20;
+        top: -300px;
+        position: relative;
+        left: 76%;
+    }
 }

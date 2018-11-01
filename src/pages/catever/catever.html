@@ -6,13 +6,32 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>catever</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <ion-title>Categoría</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-
+    <ion-card>
+        <ion-card-header class="titulo">{{cate.nom}}</ion-card-header>
+        <img *ngIf="cate.foto == 'sinfotocate.svg'" src="../../assets/cate/sinfotocate.svg"/>
+        <img *ngIf="cate.foto != 'sinfotocate.svg'" src="http://192.168.0.49/Flas015web/img/cate/{{cate.foto}}"/>
+        <div id="cam"></div>
+        <p>{{cate.det}}</p>
+    </ion-card>
+    
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button ion-button color="Primary" (click)="irAModificar()">Actualizar</button>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col>
+                <button ion-button color="danger">Eliminar</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    
+    
 </ion-content>

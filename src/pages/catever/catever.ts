@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {CatemodifiPage} from '../catemodifi/catemodifi';
 import {ConectarProvider} from '../../providers/conectar/conectar';
 import {LoadingController, ToastController, AlertController} from 'ionic-angular';
+import {Camera, CameraOptions} from '@ionic-native/camera';
 /**
  * Generated class for the CateverPage page.
  *
@@ -17,13 +18,34 @@ import {LoadingController, ToastController, AlertController} from 'ionic-angular
 })
 export class CateverPage {
     cate;
+    calidad = 50;
+    imageURI;
     constructor(public navCtrl: NavController,
         public navParams: NavParams,
         private conecta: ConectarProvider,
         public loadingCtrl: LoadingController,
         public toastCtrl: ToastController,
-        private alertCtrl: AlertController) {
+        private alertCtrl: AlertController,
+        private camera: Camera) {
         this.cate = this.navParams.get("cate");
+    }
+    
+    getPictureCamara() {
+        let options: CameraOptions = {
+            destinationType: this.camera.DestinationType.DATA_URL,
+            targetWidth: 500,
+            targetHeight: 500,
+            allowEdit:true,
+            saveToPhotoAlbum:true,
+            quality: this.calidad
+        }
+        this.camera.getPicture(options)
+            .then(imageData => {
+                this.imageURI = `data:image/jpeg;base64,${imageData}`;
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
 
 

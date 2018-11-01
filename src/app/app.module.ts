@@ -35,6 +35,8 @@ import {TomarFotoPage} from '../pages/tomar-foto/tomar-foto';
 //Opciones de enlace externo de la app
 import {HttpClientModule} from '@angular/common/http';
 import {ConectarProvider} from '../providers/conectar/conectar';
+
+import {Camera} from '@ionic-native/camera';
 @NgModule({
     declarations: [
         MyApp,
@@ -96,7 +98,8 @@ import {ConectarProvider} from '../providers/conectar/conectar';
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
-        ConectarProvider
+        ConectarProvider,
+        Camera
     ]
 })
 export class AppModule {}

@@ -39,6 +39,7 @@ export class CateverPage {
             saveToPhotoAlbum:true,
             quality: this.calidad
         }
+        
         this.camera.getPicture(options)
             .then(imageData => {
                 this.imageURI = `data:image/jpeg;base64,${imageData}`;

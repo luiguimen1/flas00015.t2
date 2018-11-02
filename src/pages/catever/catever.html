@@ -16,7 +16,7 @@
     <ion-card>
         <ion-card-header class="titulo">{{cate.nom}}</ion-card-header>
         <img *ngIf="cate.foto == 'sinfotocate.svg'" src="../../assets/cate/sinfotocate.svg"/>
-        <img *ngIf="cate.foto != 'sinfotocate.svg'" src="http://192.168.0.49/Flas015web/img/cate/{{cate.foto}}"/>
+        <img *ngIf="cate.foto != 'sinfotocate.svg'" src="{{ipserve}}/img/cate/{{cate.foto}}"/>
         <div id="cam" (click)="getPictureCamara()"></div>
         <p>{{cate.det}}</p>
     </ion-card>
@@ -34,8 +34,8 @@
     </ion-grid>
     <ion-card *ngIf="imageURI">
         <img src="{{imageURI}}"/>
-         <button ion-button color="danger">Actualizar foto</button>
+         <button ion-button color="danger" (click)="CargarImagen()">Actualizar foto</button>
     </ion-card>
-    
+    {{informe}}
     
 </ion-content>

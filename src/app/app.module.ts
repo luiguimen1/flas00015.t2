@@ -35,8 +35,12 @@ import {TomarFotoPage} from '../pages/tomar-foto/tomar-foto';
 //Opciones de enlace externo de la app
 import {HttpClientModule} from '@angular/common/http';
 import {ConectarProvider} from '../providers/conectar/conectar';
-
+// Libreria de la camara
 import {Camera} from '@ionic-native/camera';
+// Libreria de cargar archivos al servidor
+import {FileTransfer, FileUploadOptions, FileTransferObject} from '@ionic-native/file-transfer';
+import {File} from '@ionic-native/file';
+
 @NgModule({
     declarations: [
         MyApp,
@@ -99,7 +103,11 @@ import {Camera} from '@ionic-native/camera';
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         ConectarProvider,
-        Camera
+        Camera,
+        FileTransfer,
+        //FileUploadOptions,
+        FileTransferObject,
+        File
     ]
 })
 export class AppModule {}

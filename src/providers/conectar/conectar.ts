@@ -9,12 +9,21 @@ import {Injectable} from '@angular/core';
 */
 @Injectable()
 export class ConectarProvider {
-    url = "http://192.168.0.49/Flas015web/"
+    url = "http://192.168.0.31/Flas015web/"
     options = {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     };
+    token="QWER@QWE#$%@#Q@#EW..?";
+    
+    getToken(){
+        return this.token;
+    }
+    
+    getUrl(){
+        return this.url;
+    }
 
     constructor(public http: HttpClient) {
         console.log('Hello ConectarProvider Provider');
@@ -31,13 +40,13 @@ export class ConectarProvider {
      * Metodo que permite enviar los datos de un usuario al servidor
      */
     CrearUsuario(Usuario: any) {
-        Usuario.token = "QWER@QWE#$%@#Q@#EW..?";
+        Usuario.token = this.token;
         return this.http.post(this.url + "controller/user/crear.php", JSON.stringify(Usuario), this.options);
     }
 
 
     crearCategoria(cate) {
-        cate.token = "QWER@QWE#$%@#Q@#EW..?";
+        cate.token = this.token;
         return this.http.post(this.url + "controller/cate/crear.php", JSON.stringify(cate), this.options);
     }
 
@@ -50,14 +59,14 @@ export class ConectarProvider {
 
     listaCategoriaXid(cate) {
         let estaCate = {
-            token: "QWER@QWE#$%@#Q@#EW..?",
+            token: this.token,
             id: cate.cod
         };
         return this.http.post(this.url + "controller/cate/listaxid.php", JSON.stringify(estaCate), this.options);
     }
 
     actuCategoria(cate:any) {
-        cate.token = "QWER@QWE#$%@#Q@#EW..?";
+        cate.token = this.token;
         return this.http.post(this.url + "controller/cate/actu.php", JSON.stringify(cate), this.options);
     }
 }

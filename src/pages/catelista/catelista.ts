@@ -16,10 +16,11 @@ import {CateverPage} from '../catever/catever';
     templateUrl: 'catelista.html',
 })
 export class CatelistaPage {
-
+    ipserve;
     constructor(public navCtrl: NavController,
         public navParams: NavParams,
         private conecta: ConectarProvider) {
+        this.ipserve = this.conecta.getUrl();
     }
 
     ionViewDidLoad() {
